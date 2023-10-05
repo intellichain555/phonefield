@@ -1,4 +1,4 @@
-import 'package:phone_form_field/phone_form_field.dart';
+import 'package:my_phone_form_field/my_phone_form_field.dart';
 
 typedef PhoneNumberInputValidator = String? Function(PhoneNumber? phoneNumber);
 

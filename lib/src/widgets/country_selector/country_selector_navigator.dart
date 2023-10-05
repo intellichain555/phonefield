@@ -1,8 +1,8 @@
 import 'package:circle_flags/circle_flags.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:phone_form_field/phone_form_field.dart';
-import 'package:phone_form_field/src/widgets/country_selector/country_selector_page.dart';
+import 'package:my_phone_form_field/my_phone_form_field.dart';
+import 'package:my_phone_form_field/src/widgets/country_selector/country_selector_page.dart';
 
 abstract class CountrySelectorNavigator {
   final List<IsoCode>? countries;

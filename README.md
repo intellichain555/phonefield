@@ -1,4 +1,4 @@
-# phone_form_field
+# my_phone_form_field
 
 Flutter phone input integrated with flutter internationalization
 
@@ -15,7 +15,7 @@ Flutter phone input integrated with flutter internationalization
 
 ## Demo
 
-Demo available at https://cedvdb.github.io/phone_form_field/
+Demo available at https://cedvdb.github.io/my_phone_form_field/
 
 
 ## Usage
@@ -23,10 +23,10 @@ Demo available at https://cedvdb.github.io/phone_form_field/
 ```dart
 
 // works without any param
-PhoneFormField();
+MyPhoneFormField();
 
 // all params
-PhoneFormField(
+MyPhoneFormField(
   key: Key('phone-field')
   controller: null,     // controller & initialValue value
   initialValue: null,   // can't be supplied simultaneously
@@ -77,7 +77,7 @@ Validator can be a composed set of validators built-in or custom validator using
 Note that when composing validators, the sorting is important as the error message displayed is the first validator failing.
 
 ```dart
-PhoneFormField(
+MyPhoneFormField(
   // ...
   validator: PhoneValidator.compose([
     // list of validators to use
@@ -144,7 +144,7 @@ class CustomCountrySelectorNavigator implements CountrySelectorNavigator {
 }
 
 // usage
-PhoneFormField(
+MyPhoneFormField(
   // ...
   selectorNavigator: CustomCountrySelectorNavigator(),
   // ...

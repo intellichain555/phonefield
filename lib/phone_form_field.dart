@@ -1,6 +1,6 @@
 library phone_number_input;
 
-export 'src/widgets/phone_form_field.dart';
+export 'src/widgets/my_phone_form_field.dart';
 export 'src/widgets/country_selector/country_selector_navigator.dart';
 export 'src/widgets/country_selector/country_selector.dart';
 export 'src/widgets/country_code_chip.dart';

@@ -13,13 +13,13 @@ import '../validation/validator_translator.dart';
 import 'country_selector/country_selector_navigator.dart';
 import 'phone_field.dart';
 
-part 'phone_form_field_state.dart';
+part 'my_phone_form_field_state.dart';
 
 /// Phone input extending form field.
 ///
 /// ### controller:
 /// {@template controller}
-/// Use a [PhoneController] for PhoneFormField when you need to dynamically
+/// Use a [PhoneController] for MyPhoneFormField when you need to dynamically
 /// change the value.
 ///
 /// Whenever the user modifies the phone field with an
@@ -79,7 +79,7 @@ part 'phone_form_field_state.dart';
 /// - the field is focussed.
 /// - the field has a value for national number.
 /// - the field has no label obstructing the view.
-class PhoneFormField extends FormField<PhoneNumber> {
+class MyPhoneFormField extends FormField<PhoneNumber> {
   /// {@macro controller}
   final PhoneController? controller;
 
@@ -101,7 +101,7 @@ class PhoneFormField extends FormField<PhoneNumber> {
   /// show selected iso code or not
   final bool showIsoCodeInInput;
 
-  PhoneFormField({
+  MyPhoneFormField({
     Key? key,
     this.controller,
     this.shouldFormat = true,
@@ -173,7 +173,7 @@ class PhoneFormField extends FormField<PhoneNumber> {
           validator: validator ?? PhoneValidator.valid(),
           restorationId: restorationId,
           builder: (state) {
-            final field = state as PhoneFormFieldState;
+            final field = state as MyPhoneFormFieldState;
             return PhoneField(
               controller: field._childController,
               showFlagInInput: showFlagInInput,
@@ -228,5 +228,5 @@ class PhoneFormField extends FormField<PhoneNumber> {
         );
 
   @override
-  PhoneFormFieldState createState() => PhoneFormFieldState();
+  MyPhoneFormFieldState createState() => MyPhoneFormFieldState();
 }

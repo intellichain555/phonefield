@@ -1,12 +1,12 @@
-part of 'phone_form_field.dart';
+part of 'my_phone_form_field.dart';
 
-class PhoneFormFieldState extends FormFieldState<PhoneNumber> {
+class MyPhoneFormFieldState extends FormFieldState<PhoneNumber> {
   late final PhoneController _controller;
   late final PhoneFieldController _childController;
   late final StreamSubscription<void> _selectionSubscription;
 
   @override
-  PhoneFormField get widget => super.widget as PhoneFormField;
+  MyPhoneFormField get widget => super.widget as MyPhoneFormField;
 
   @override
   void initState() {

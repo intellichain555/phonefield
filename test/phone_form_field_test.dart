@@ -2,11 +2,11 @@ import 'package:circle_flags/circle_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:phone_form_field/phone_form_field.dart';
-import 'package:phone_form_field/src/widgets/country_selector/country_list.dart';
+import 'package:my_phone_form_field/my_phone_form_field.dart';
+import 'package:my_phone_form_field/src/widgets/country_selector/country_list.dart';
 
 void main() {
-  group('PhoneFormField', () {
+  group('MyPhoneFormField', () {
     final formKey = GlobalKey<FormState>();
     final phoneKey = GlobalKey<FormFieldState<PhoneNumber>>();
     Widget getWidget({
@@ -29,7 +29,7 @@ void main() {
           home: Scaffold(
             body: Form(
               key: formKey,
-              child: PhoneFormField(
+              child: MyPhoneFormField(
                 key: phoneKey,
                 initialValue: initialValue,
                 onChanged: onChanged,
@@ -67,7 +67,7 @@ void main() {
           (tester) async {
         await tester.pumpWidget(getWidget());
         expect(find.byType(CountryList), findsNothing);
-        await tester.tap(find.byType(PhoneFormField));
+        await tester.tap(find.byType(MyPhoneFormField));
         await tester.pump(const Duration(seconds: 1));
         await tester.tap(find.byType(CountryCodeChip));
         await tester.pumpAndSettle();
@@ -92,7 +92,7 @@ void main() {
         await tester.pumpWidget(
             getWidget(initialValue: phoneNumber, shouldFormat: true));
         await tester.pump(const Duration(seconds: 1));
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.enterText(phoneField, '677777777');
         await tester.pump(const Duration(seconds: 1));
         expect(find.text('6 77 77 77 77'), findsOneWidget);
@@ -146,7 +146,7 @@ void main() {
         });
         await tester.pumpWidget(
             getWidget(controller: controller, defaultCountry: IsoCode.US));
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.tap(phoneField);
         // non digits should not work
         await tester.enterText(phoneField, '123456789');
@@ -188,7 +188,7 @@ void main() {
         });
         await tester.pumpWidget(
             getWidget(controller: controller, defaultCountry: IsoCode.US));
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.tap(phoneField);
         // non digits should not work
         await tester.enterText(phoneField, '+33 0488 99 77 22');
@@ -212,7 +212,7 @@ void main() {
             onChanged: onChanged,
           ),
         );
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.tap(phoneField);
         // non digits should not work
         await tester.enterText(phoneField, 'aaa');
@@ -234,7 +234,7 @@ void main() {
           destinationCountry: IsoCode.FR,
         );
         await tester.pumpWidget(getWidget(initialValue: phoneNumber));
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.enterText(phoneField, '9984');
         await tester.pump(const Duration(seconds: 1));
 
@@ -253,7 +253,7 @@ void main() {
           initialValue: phoneNumber,
           validator: PhoneValidator.validFixedLine(),
         ));
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.enterText(phoneField, '77777777');
         await tester.pumpAndSettle();
         expect(find.text('Invalid'), findsNothing);
@@ -264,7 +264,7 @@ void main() {
             errorText: 'Invalid phone number',
           ),
         ));
-        final phoneField2 = find.byType(PhoneFormField);
+        final phoneField2 = find.byType(MyPhoneFormField);
         await tester.pumpAndSettle();
         await tester.enterText(phoneField2, '77777777');
         await tester.pumpAndSettle();
@@ -277,7 +277,7 @@ void main() {
             errorText: 'Invalid phone number',
           ),
         ));
-        final phoneField3 = find.byType(PhoneFormField);
+        final phoneField3 = find.byType(MyPhoneFormField);
         await tester.enterText(phoneField3, '477668899');
         await tester.pumpAndSettle();
         expect(find.text('Invalid'), findsNothing);
@@ -294,7 +294,7 @@ void main() {
         await tester.pumpWidget(
             getWidget(initialValue: phoneNumber, shouldFormat: true));
         await tester.pump(const Duration(seconds: 1));
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.enterText(phoneField, '677777777');
         await tester.pump(const Duration(seconds: 1));
         expect(find.text('6 77 77 77 77'), findsOneWidget);
@@ -309,7 +309,7 @@ void main() {
         await tester.pumpWidget(
             getWidget(initialValue: phoneNumber, shouldFormat: false));
         await tester.pump(const Duration(seconds: 1));
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.enterText(phoneField, '677777777');
         await tester.pump(const Duration(seconds: 1));
         expect(find.text('677777777'), findsOneWidget);
@@ -332,7 +332,7 @@ void main() {
           initialValue: phoneNumber,
           onSaved: onSaved,
         ));
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.enterText(phoneField, '479281938');
         await tester.pump(const Duration(seconds: 1));
         formKey.currentState?.save();
@@ -355,7 +355,7 @@ void main() {
         await tester.pumpWidget(getWidget(initialValue: phoneNumber));
         await tester.pump(const Duration(seconds: 1));
         const national = '123456';
-        final phoneField = find.byType(PhoneFormField);
+        final phoneField = find.byType(MyPhoneFormField);
         await tester.enterText(phoneField, national);
         expect(find.text(national), findsOneWidget);
         formKey.currentState?.reset();

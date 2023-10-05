@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:phone_form_field/phone_form_field.dart';
+import 'package:my_phone_form_field/my_phone_form_field.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +49,7 @@ class PhoneFieldView extends StatelessWidget {
     return AutofillGroup(
       child: Directionality(
         textDirection: useRtl ? TextDirection.rtl : TextDirection.ltr,
-        child: PhoneFormField(
+        child: MyPhoneFormField(
           key: inputKey,
           controller: controller,
           shouldFormat: shouldFormat && !useRtl,
@@ -109,19 +109,19 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
       ),
-      home: const PhoneFormFieldScreen(),
+      home: const MyPhoneFormFieldScreen(),
     );
   }
 }
 
-class PhoneFormFieldScreen extends StatefulWidget {
-  const PhoneFormFieldScreen({Key? key}) : super(key: key);
+class MyPhoneFormFieldScreen extends StatefulWidget {
+  const MyPhoneFormFieldScreen({Key? key}) : super(key: key);
 
   @override
-  PhoneFormFieldScreenState createState() => PhoneFormFieldScreenState();
+  MyPhoneFormFieldScreenState createState() => MyPhoneFormFieldScreenState();
 }
 
-class PhoneFormFieldScreenState extends State<PhoneFormFieldScreen> {
+class MyPhoneFormFieldScreenState extends State<MyPhoneFormFieldScreen> {
   late PhoneController controller;
   bool outlineBorder = true;
   bool mobileOnly = true;
@@ -152,7 +152,7 @@ class PhoneFormFieldScreenState extends State<PhoneFormFieldScreen> {
     return Scaffold(
       // drawer: AppDrawer(),
       appBar: AppBar(
-        title: const Text('Phone_form_field'),
+        title: const Text('my_phone_form_field'),
       ),
       body: SingleChildScrollView(
         child: Center(

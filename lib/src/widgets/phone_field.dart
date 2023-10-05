@@ -3,10 +3,10 @@ import 'dart:ui' as ui show BoxHeightStyle, BoxWidthStyle;
 import 'package:circle_flags/circle_flags.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:phone_form_field/src/constants/patterns.dart';
-import 'package:phone_form_field/src/controllers/phone_field_controller.dart';
+import 'package:my_phone_form_field/src/constants/patterns.dart';
+import 'package:my_phone_form_field/src/controllers/phone_field_controller.dart';
 
-import '../../phone_form_field.dart';
+import '../../my_phone_form_field.dart';
 
 part 'phone_field_state.dart';
 

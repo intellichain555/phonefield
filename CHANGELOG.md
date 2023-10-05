@@ -184,8 +184,8 @@
 # Validation
 
 - Add PhoneValidator class to easily customize validation and defaults localization error messagees
-- Add PhoneFormField `validator` property
-- **[BREAKING CHANGE]** Remove `PhoneFormField` properties `errorText` & `phoneNumberType`. Define `validator` property instead with `PhoneValidator.invalid*`
+- Add MyPhoneFormField `validator` property
+- **[BREAKING CHANGE]** Remove `MyPhoneFormField` properties `errorText` & `phoneNumberType`. Define `validator` property instead with `PhoneValidator.invalid*`
 
 # Misc
 
@@ -218,17 +218,17 @@ Thus it was decided that it was not worth it to keep backward compatibility and 
 
 ```
   // cover sheet
-  PhoneFormField(
+  MyPhoneFormField(
     // ...
     selectorConfig: SelectorConfigCoverSheet()
   )
   // dialog
-  PhoneFormField(
+  MyPhoneFormField(
     // ...
     selectorConfig: SelectorConfigBottomSheet()
   )
   // bottom sheet
-  PhoneFormField(
+  MyPhoneFormField(
     // ...
     selectorConfig: SelectorConfigBottomSheet(null)
   )
@@ -267,7 +267,7 @@ Thus it was decided that it was not worth it to keep backward compatibility and 
 
 ## [1.0.0] - 21 / 04 / 2021
 
-- Reworked internal so the PhoneFormField behaves exactly like a TextFormField
+- Reworked internal so the MyPhoneFormField behaves exactly like a TextFormField
 
 ## [0.0.6] - 15 / 04 / 2021
 

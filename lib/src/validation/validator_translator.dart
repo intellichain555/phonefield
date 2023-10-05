@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:phone_form_field/l10n/generated/phone_field_localization.dart';
+import 'package:my_phone_form_field/l10n/generated/phone_field_localization.dart';
 
 typedef _PhoneValidatorMessageDelegate = String? Function(BuildContext context);
 
